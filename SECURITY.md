@@ -10,4 +10,4 @@
 
 ## Reporting a Vulnerability
 
-Report a vulnerability [here.](https://github.com/Gameking1happy-Development/GK1H-Mod-Template/security/advisories/new)
+Report a vulnerability [here.](https://github.com/Gameking1happy-Development/GK1H-Extras/security/advisories/new)

@@ -49,8 +49,8 @@
       "update_checker": true
     },
     "mc-publish": {
-      "modrinth": "MODRINTHID",
-      "curseforge": "CURSEFORGEID",
+      "modrinth": "hT2hhDZJ",
+      "curseforge": 1389898,
       "dependencies": [
         "fabricloader@>=${fabric_loader_version}#(ignore)",
         "minecraft@${minecraft_version}#(ignore)",

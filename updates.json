@@ -1,22 +1,10 @@
 {
-  "homepage": "https://github.com/Gameking1happy-Development/GK1H-Mod-Template",
+  "homepage": "https://github.com/Gameking1happy-Development/GK1H-Extras",
   "1.21.1": {
-    "1.0.0": "Release.",
-    "1.0.1": "Added example configs and some other changes.",
-    "1.0.2": "Implemented the core mod into the example mod.",
-    "1.0.3": "Implemented join message and usage of mc-publish.",
-    "1.0.3_1": "Edited mixins to reduce spam.",
-    "1.0.4": "Data generation, making client and server classes, renamed classes, reformated everything, and updated Gradle, Loom, and ModDevGradle.",
-    "21.1.1.0": "Changed versioning to [Minecraft Minor].[Minecraft Patch].[Major].[Minor].",
-    "21.1.1.1": "Many code cleanups, improvements, etc.",
-    "21.1.1.2": "Switched to Fzzy Config.",
-    "21.1.1.3": "Added documentation and cleaned up code.",
-    "21.1.1.4": "Added an example pack.",
-    "21.1.1.5": "Fix.",
-    "21.1.2.0": "Changed layout."
+    "21.1.1.0": "Release."
   },
   "promos": {
-    "1.21.1-latest": "21.1.2.0",
-    "1.21.1-recommended": "21.1.2.0"
+    "1.21.1-latest": "21.1.1.0",
+    "1.21.1-recommended": "21.1.1.0"
   }
 }
