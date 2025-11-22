@@ -1,0 +1,19 @@
+//file:noinspection GrUnresolvedAccess
+plugins {
+    // see https://fabricmc.net/develop/ for new versions
+    id 'fabric-loom' version '1.13-SNAPSHOT' apply false
+    // see https://projects.neoforged.net/neoforged/moddevgradle for new versions
+    id 'net.neoforged.moddev' version '2.0.116' apply false
+}
+subprojects {
+    repositories {
+        maven {
+            name = "FzzyMaven"
+            url = "https://maven.fzzyhmstrs.me/"
+        }
+        maven {
+            name = "GK1H Mod Resources"
+            url = "https://raw.githubusercontent.com/Gameking1happy-Development/Mod-Resources/main/maven/"
+        }
+    }
+}

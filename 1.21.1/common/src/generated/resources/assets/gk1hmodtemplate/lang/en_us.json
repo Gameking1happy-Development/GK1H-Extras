@@ -1,0 +1,10 @@
+{
+  "gk1hmodtemplate.client_config": "Example Client Config",
+  "gk1hmodtemplate.client_config.ExampleClient": "Example Client Config Value",
+  "gk1hmodtemplate.client_config.ExampleClient.desc": "Example Client Config Value Description.",
+  "gk1hmodtemplate.server_config": "Example Server Config",
+  "gk1hmodtemplate.server_config.ExamplePack": "Example Pack Config Value",
+  "gk1hmodtemplate.server_config.ExamplePack.desc": "Example Pack Config Value Description.",
+  "gk1hmodtemplate.server_config.ExampleServer": "Example Server Config Value",
+  "gk1hmodtemplate.server_config.ExampleServer.desc": "Example Server Config Value Description."
+}

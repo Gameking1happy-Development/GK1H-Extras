@@ -1,0 +1,41 @@
+on:
+  release:
+    types: [ published ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5.0.0
+      - name: Get required Java version
+        id: gradle-properties
+        uses: christian-draeger/read-properties@1.1.1
+        with:
+          path: gradle.properties
+          properties: java_version
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ steps.gradle-properties.outputs.java_version }}
+
+      - name: Build artifacts
+        run: ./gradlew clean build --no-daemon
+      - name: Fabric
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          modrinth-token: ${{ secrets.GK1H_MODRINTH_API_KEY }}
+          curseforge-token: ${{ secrets.GK1H_CURSEFORGE_API_KEY }}
+          files: |
+            fabric/build/libs/!(*-@(dev|shadow|sources|javadoc)).jar
+            fabric/build/libs/*-@(sources|javadoc).jar
+      - name: NeoForge
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          modrinth-token: ${{ secrets.GK1H_MODRINTH_API_KEY }}
+          curseforge-token: ${{ secrets.GK1H_CURSEFORGE_API_KEY }}
+          files: |
+            neoforge/build/libs/!(*-@(dev|shadow|sources|javadoc)).jar
+            neoforge/build/libs/*-@(sources|javadoc).jar

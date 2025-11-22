@@ -1,0 +1,56 @@
+//file:noinspection GroovyAssignabilityCheck
+//file:noinspection GroovyImplicitNullArgumentCall
+//file:noinspection GrUnresolvedAccess
+plugins {
+    id 'multiloader-loader'
+    id 'net.neoforged.moddev'
+}
+repositories {
+    maven {
+        url = "https://thedarkcolour.github.io/KotlinForForge/"
+    }
+}
+dependencies {
+    api("io.github.gameking1happy.gk1hcore:gk1hcore-neoforge-1.21.1:${gk1hcore_version}")
+    accessTransformers("io.github.gameking1happy.gk1hcore:gk1hcore-neoforge-1.21.1:${gk1hcore_version}")
+    implementation("me.fzzyhmstrs:fzzy_config:${fzzy_config_version}+neoforge")
+}
+neoForge {
+    version = neoforge_version
+    // Automatically enable neoforge AccessTransformers if the file exists
+    def at = project(':common').file('src/main/resources/META-INF/accesstransformer.cfg')
+    if (at.exists()) {
+        accessTransformers.from(at.absolutePath)
+    }
+    parchment {
+        minecraftVersion = parchment_minecraft
+        mappingsVersion = parchment_version
+    }
+    runs {
+        configureEach {
+            systemProperty('neoforge.enabledGameTestNamespaces', mod_id)
+            ideName = "NeoForge ${it.name.capitalize()} (${project.path})" // Unify the run config names with fabric
+        }
+        client {
+            gameDirectory = project.file('runs/client')
+            client()
+        }
+        data {
+            data()
+            gameDirectory = project.file('runs/data')
+            // DataGen can be run by - "./gradlew :neoforge:runData" in Terminal.
+            // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
+            programArguments.addAll '--mod', project.mod_id, '--all', '--output', rootProject.project('common').file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+
+        }
+        server {
+            gameDirectory = project.file('runs/server')
+            server()
+        }
+    }
+    mods {
+        "${mod_id}" {
+            sourceSet sourceSets.main
+        }
+    }
+}

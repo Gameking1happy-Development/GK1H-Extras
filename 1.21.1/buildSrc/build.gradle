@@ -1,0 +1,4 @@
+//file:noinspection GrUnresolvedAccess
+plugins {
+    id 'groovy-gradle-plugin'
+}
