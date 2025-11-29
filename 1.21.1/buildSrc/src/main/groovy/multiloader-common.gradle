@@ -47,19 +47,6 @@ repositories {
     }
 }
 
-// Declare capabilities on the outgoing configurations.
-// Read more about capabilities here: https://docs.gradle.org/current/userguide/component_capabilities.html#sec:declaring-additional-capabilities-for-a-local-component
-['apiElements', 'runtimeElements', 'sourcesElements', 'javadocElements'].each { variant ->
-    configurations."$variant".outgoing {
-        capability("$group:${base.archivesName.get()}:$version")
-        capability("$group:$mod_id-${project.name}-${minecraft_version}:$version")
-        capability("$group:$mod_id:$version")
-    }
-    publishing.publications.configureEach {
-        suppressPomMetadataWarningsFor(variant)
-    }
-}
-
 jar {
     manifest {
         attributes([
@@ -95,7 +82,10 @@ processResources {
             'mod_issue_url'                : mod_issue_url,
             'fzzy_config_version'          : fzzy_config_version,
             'gk1hcore_version'             : gk1hcore_version,
-            'modmenu_version'              : modmenu_version
+            'modmenu_version'              : modmenu_version,
+            'swordblockingmechanics_version' : swordblockingmechanics_version,
+            'enderzoology_version'         : enderzoology_version,
+            'puzzleslib_version'           : puzzleslib_version
     ]
 
     filesMatching(['pack.mcmeta', 'fabric.mod.json', 'META-INF/mods.toml', 'META-INF/neoforge.mods.toml', '*.mixins.json']) {
@@ -113,7 +103,8 @@ publishing {
     }
     repositories {
         maven {
-            url = System.getenv('local_maven_url')
+            def userhome = System.properties['user.home']
+            url = userhome + "/Documents/GitHub/Mod-Resources/maven"
         }
     }
 }

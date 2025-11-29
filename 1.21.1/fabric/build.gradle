@@ -14,6 +14,9 @@ dependencies {
     modImplementation("me.fzzyhmstrs:fzzy_config:${fzzy_config_version}")
     modApi("io.github.gameking1happy.gk1hcore:gk1hcore-fabric-1.21.1:${gk1hcore_version}")
     modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}")
+    modRuntimeOnly("maven.modrinth:sword-blocking-mechanics:v${swordblockingmechanics_version}-1.21.1-Fabric")
+    modRuntimeOnly("fuzs.puzzleslib:puzzleslib-fabric:${puzzleslib_version}")
+    modImplementation("maven.modrinth:ender-zoology:v${enderzoology_version}-1.21.1-Fabric")
 }
 repositories {
     maven {

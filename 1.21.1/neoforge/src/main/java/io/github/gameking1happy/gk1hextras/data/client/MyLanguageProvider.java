@@ -20,12 +20,13 @@ public class MyLanguageProvider extends LanguageProvider {
     @Override
     protected void addTranslations() {
         add("gk1hextras.server_config", "Example Server Config");
-        add("gk1hextras.server_config.ExampleServer", "Example Server Config Value");
-        add("gk1hextras.server_config.ExampleServer.desc", "Example Server Config Value Description.");
-        add("gk1hextras.server_config.ExamplePack", "Example Pack Config Value");
-        add("gk1hextras.server_config.ExamplePack.desc", "Example Pack Config Value Description.");
-        add("gk1hextras.client_config", "Example Client Config");
-        add("gk1hextras.client_config.ExampleClient", "Example Client Config Value");
-        add("gk1hextras.client_config.ExampleClient.desc", "Example Client Config Value Description.");
+        add("gk1hextras.server_config.SpongeFishing", "Fishable Sponge");
+        add("gk1hextras.server_config.SpongeFishing.desc", "Add wet sponge to fishing junk loot.");
+        add("gk1hextras.server_config.SpongeChance", "Sponge Chance");
+        add("gk1hextras.server_config.SpongeChance.desc", "The chance that a junk loot roll will give a wet sponge.");
+        add("gk1hextras.server_config.DragonDropsHead", "Dragon Drops Head");
+        add("gk1hextras.server_config.DragonDropsHead.desc", "Add dragon head to ender dragon drops.");
+        add("gk1hextras.server_config.MaceBlock", "Mace Blocking");
+        add("gk1hextras.server_config.MaceBlock.desc", "Allows blocking with mace. Requires Sword Blocking Mechanics.");
     }
 }

@@ -1,4 +1,5 @@
 //file:noinspection GrUnresolvedAccess
+//file:noinspection ForeignDelegate
 plugins {
     // see https://fabricmc.net/develop/ for new versions
     id 'fabric-loom' version '1.13-SNAPSHOT' apply false
@@ -14,6 +15,21 @@ subprojects {
         maven {
             name = "GK1H Mod Resources"
             url = "https://raw.githubusercontent.com/Gameking1happy-Development/Mod-Resources/main/maven/"
+        }
+        maven {
+            name = "Fuzs Mod Resources"
+            url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/"
+        }
+        exclusiveContent {
+            forRepository {
+                maven {
+                    name = "Modrinth"
+                    url = "https://api.modrinth.com/maven"
+                }
+            }
+            filter {
+                includeGroup "maven.modrinth"
+            }
         }
     }
 }

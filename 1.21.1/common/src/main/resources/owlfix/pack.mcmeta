@@ -1,0 +1,6 @@
+{
+  "pack": {
+    "description": "Fixes owls from Ender Zoology being too loud by setting volume to what it is in later versions.",
+    "pack_format": 34
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "gk1hextras.server_config": "Example Server Config",
+  "gk1hextras.server_config.DragonDropsHead": "Dragon Drops Head",
+  "gk1hextras.server_config.DragonDropsHead.desc": "Add dragon head to ender dragon drops.",
+  "gk1hextras.server_config.MaceBlock": "Mace Blocking",
+  "gk1hextras.server_config.MaceBlock.desc": "Allows blocking with mace. Requires Sword Blocking Mechanics.",
+  "gk1hextras.server_config.SpongeChance": "Sponge Chance",
+  "gk1hextras.server_config.SpongeChance.desc": "The chance that a junk loot roll will give a wet sponge.",
+  "gk1hextras.server_config.SpongeFishing": "Fishable Sponge",
+  "gk1hextras.server_config.SpongeFishing.desc": "Add wet sponge to fishing junk loot."
+}

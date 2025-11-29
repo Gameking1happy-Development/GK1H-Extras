@@ -31,23 +31,26 @@ public class Main {
      */
     public static ServerConfig serverconfig = ConfigApiJava.registerAndLoadConfig(ServerConfig::new);
     /**
-     * Example server configuration value.
+     * Sponge fishing configuration value.
      */
-    public static boolean ExampleServer = serverconfig.ExampleServer.get();
+    public static boolean SpongeFishing = serverconfig.SpongeFishing.get();
     /**
-     * Example pack configuration value.
+     * Sponge chance configuration value.
      */
-    public static boolean ExamplePack = serverconfig.ExamplePack.get();
+    public static float SpongeChance = serverconfig.SpongeChance.get();
+    /**
+     * Dragon drops head configuration value.
+     */
+    public static boolean DragonDropsHead = serverconfig.DragonDropsHead.get();
+    /**
+     * Mace blocking configuration value.
+     */
+    public static boolean MaceBlock = serverconfig.MaceBlock.get();
     /**
      * Common method for initializing the mod.
      */
     public static void init() {
         LOG.info("Hello from Common init on {}! we are currently in a {} environment!", PLATFORM.getPlatformName(), PLATFORM.getEnvironmentName());
         addClass(new Packs());
-        if (ExampleServer) {
-            LOG.info("Example Server is true!");
-        } else {
-            LOG.info("Example Server is false!");
-        }
     }
 }

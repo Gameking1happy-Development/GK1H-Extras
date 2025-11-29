@@ -40,8 +40,8 @@ ordering = "NONE"
 side = "BOTH"
 [dependencies.${ mod_id }.mc-publish]
 ignore = false
-modrinth = "vjOWyxXu"
-curseforge = 1384685
+modrinth = "gk1h-core"
+curseforge = "1384685"
 [[dependencies.${ mod_id }]]
 modId = "fzzy_config"
 type = "required"
@@ -50,11 +50,30 @@ ordering = "NONE"
 side = "BOTH"
 [dependencies.${ mod_id }.mc-publish]
 ignore = false
-modrinth = "hYykXjDp"
-curseforge = 1005914
+modrinth = "fzzy-config"
+curseforge = "1005914"
+[[dependencies.${ mod_id }]]
+modId = "swordblockingmechanics"
+type = "optional"
+versionRange = "[${swordblockingmechanics_version},)"
+ordering = "AFTER"
+side = "BOTH"
+[[dependencies.${ mod_id }]]
+modId = "enderzoology"
+type = "optional"
+versionRange = "[${enderzoology_version},)"
+ordering = "AFTER"
+side = "BOTH"
+[dependencies.${ mod_id }.mc-publish]
+ignore = false
+modrinth = "ender-zoology"
+curseforge = "857968"
 [mc-publish]
-modrinth = "hT2hhDZJ"
-curseforge = 1389898
+modrinth = "gk1h-extras"
+curseforge = "1389898"
+dependencies=[
+    "swordblockingmechanics@>=${swordblockingmechanics_version}(recommended){modrinth:sword-blocking-mechanics}{curseforge:969424}"
+    ]
 # Features are specific properties of the game environment, that you may want to declare you require. This example declares
 # that your mod requires GL version 3.2 or higher. Other features will be added. They are side aware so declaring this won't
 # stop your mod loading on the server for example.

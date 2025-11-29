@@ -39,7 +39,11 @@
     "gk1hcore": ">=${gk1hcore_version}"
   },
   "recommends": {
-    "modmenu": ">=${modmenu_version}"
+    "modmenu": ">=${modmenu_version}",
+    "swordblockingmechanics": ">=${swordblockingmechanics_version}"
+  },
+  "suggests": {
+    "enderzoology": ">=${enderzoology_version}"
   },
   "custom": {
     "modmenu": {
@@ -49,14 +53,16 @@
       "update_checker": true
     },
     "mc-publish": {
-      "modrinth": "hT2hhDZJ",
-      "curseforge": 1389898,
+      "modrinth": "gk1h-extras",
+      "curseforge": "1389898",
       "dependencies": [
         "fabricloader@>=${fabric_loader_version}#(ignore)",
         "minecraft@${minecraft_version}#(ignore)",
         "java@>=${java_version}#(ignore)",
-        "fzzy_config@>=${fzzy_config_version}(required){modrinth:hYykXjDp}{curseforge:1005914}",
-        "gk1hcore@>=${gk1hcore_version}(required){modrinth:vjOWyxXu}{curseforge:1384685}"
+        "fzzy_config@>=${fzzy_config_version}(required){modrinth:fzzy-config}{curseforge:1005914}",
+        "gk1hcore@>=${gk1hcore_version}(required){modrinth:gk1h-core}{curseforge:1384685}",
+        "swordblockingmechanics@>=${swordblockingmechanics_version}(recommended){modrinth:sword-blocking-mechanics}{curseforge:969424}",
+        "enderzoology@>=${enderzoology_version}(optional){modrinth:ender-zoology}{curseforge:857968}"
       ]
     }
   }

@@ -14,6 +14,9 @@ dependencies {
     api("io.github.gameking1happy.gk1hcore:gk1hcore-neoforge-1.21.1:${gk1hcore_version}")
     accessTransformers("io.github.gameking1happy.gk1hcore:gk1hcore-neoforge-1.21.1:${gk1hcore_version}")
     implementation("me.fzzyhmstrs:fzzy_config:${fzzy_config_version}+neoforge")
+    runtimeOnly("fuzs.puzzleslib:puzzleslib-neoforge:${puzzleslib_version}")
+    runtimeOnly("maven.modrinth:sword-blocking-mechanics:v${swordblockingmechanics_version}-1.21.1-NeoForge")
+    implementation("maven.modrinth:ender-zoology:v${enderzoology_version}-1.21.1-NeoForge")
 }
 neoForge {
     version = neoforge_version

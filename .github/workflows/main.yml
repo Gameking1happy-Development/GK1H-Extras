@@ -8,11 +8,16 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v5.0.0
+      - name: Version
+        id: version
+        run: |
+          t="${{ github.ref_name }}"
+          echo v="1.${t%.*.*}" >> $GITHUB_OUTPUT
       - name: Get required Java version
         id: gradle-properties
         uses: christian-draeger/read-properties@1.1.1
         with:
-          path: gradle.properties
+          path: ${{ steps.version.outputs.v }}/gradle.properties
           properties: java_version
 
       - name: Set up JDK
@@ -22,20 +27,23 @@ jobs:
           java-version: ${{ steps.gradle-properties.outputs.java_version }}
 
       - name: Build artifacts
-        run: ./gradlew clean build --no-daemon
+        working-directory: ./${{ steps.version.outputs.v }}
+        run: |
+          chmod +x ./gradlew
+          ./gradlew clean build --no-daemon
       - name: Fabric
         uses: Kir-Antipov/mc-publish@v3.3
         with:
           modrinth-token: ${{ secrets.GK1H_MODRINTH_API_KEY }}
           curseforge-token: ${{ secrets.GK1H_CURSEFORGE_API_KEY }}
           files: |
-            fabric/build/libs/!(*-@(dev|shadow|sources|javadoc)).jar
-            fabric/build/libs/*-@(sources|javadoc).jar
+            ${{ steps.version.outputs.v }}/fabric/build/libs/!(*-@(dev|shadow|sources|javadoc)).jar
+            ${{ steps.version.outputs.v }}/fabric/build/libs/*-@(sources|javadoc).jar
       - name: NeoForge
         uses: Kir-Antipov/mc-publish@v3.3
         with:
           modrinth-token: ${{ secrets.GK1H_MODRINTH_API_KEY }}
           curseforge-token: ${{ secrets.GK1H_CURSEFORGE_API_KEY }}
           files: |
-            neoforge/build/libs/!(*-@(dev|shadow|sources|javadoc)).jar
-            neoforge/build/libs/*-@(sources|javadoc).jar
+            ${{ steps.version.outputs.v }}/neoforge/build/libs/!(*-@(dev|shadow|sources|javadoc)).jar
+            ${{ steps.version.outputs.v }}/neoforge/build/libs/*-@(sources|javadoc).jar
