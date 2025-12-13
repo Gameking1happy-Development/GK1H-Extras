@@ -27,11 +27,11 @@ public class ModifyLootTable {
         /*
         Adds wet sponge to the fishing junk loot, with a chance of SpongeChance.
          */
-        if (event.getKey().equals(BuiltInLootTables.FISHING_JUNK) && SpongeFishing) {
+        if (event.getKey().equals(BuiltInLootTables.FISHING_JUNK) && spongeFishing) {
             event.getTable().addPool(
                     LootPool.lootPool()
                             .setRolls(ConstantValue.exactly(1f))
-                            .when(LootItemRandomChanceCondition.randomChance(SpongeChance))
+                            .when(LootItemRandomChanceCondition.randomChance(spongeChance))
                             .add(LootItem.lootTableItem(Items.WET_SPONGE))
                             .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1f)))
                             .build()
@@ -40,7 +40,7 @@ public class ModifyLootTable {
         /*
         Makes ender dragon have a 100% chance of dropping head.
          */
-        if (event.getName().equals(ResourceLocation.parse("minecraft:entities/ender_dragon")) && DragonDropsHead) {
+        if (event.getName().equals(ResourceLocation.parse("minecraft:entities/ender_dragon")) && dragonDropsHead) {
             event.getTable().addPool(
                     LootPool.lootPool()
                             .setRolls(ConstantValue.exactly(1f))

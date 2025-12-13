@@ -31,18 +31,18 @@ public class GatherDataEventSubscribe {
     public static void gatherData(@NotNull GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         PackOutput output = generator.getPackOutput();
-        PackOutput MaceBlockOutput = generator.getPackOutput("maceblock");
-        PackOutput OwlFixOutput = generator.getPackOutput("owlfix");
+        PackOutput maceBlockOutput = generator.getPackOutput("maceblock");
+        PackOutput owlFixOutput = generator.getPackOutput("owlfix");
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
-        ExistingFileHelper OwlFixExistingFileHelper = event.getExistingFileHelper();
-        OwlFixExistingFileHelper.trackGenerated(OwlHurt, PackType.CLIENT_RESOURCES, ".ogg", "sounds");
-        OwlFixExistingFileHelper.trackGenerated(OwlHoot1, PackType.CLIENT_RESOURCES, ".ogg", "sounds");
-        OwlFixExistingFileHelper.trackGenerated(OwlHoot2, PackType.CLIENT_RESOURCES, ".ogg", "sounds");
+        ExistingFileHelper owlFixExistingFileHelper = event.getExistingFileHelper();
+        owlFixExistingFileHelper.trackGenerated(owlHurt, PackType.CLIENT_RESOURCES, ".ogg", "sounds");
+        owlFixExistingFileHelper.trackGenerated(owlHoot1, PackType.CLIENT_RESOURCES, ".ogg", "sounds");
+        owlFixExistingFileHelper.trackGenerated(owlHoot2, PackType.CLIENT_RESOURCES, ".ogg", "sounds");
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         BlockTagsProvider blockTagsProvider = new MyBlockTagsProvider(output, lookupProvider, existingFileHelper);
         generator.addProvider(event.includeClient(), new MyLanguageProvider(output));
-        generator.addProvider(event.includeClient(), new OwlFixSoundDefinitionsProvider(OwlFixOutput, OwlFixExistingFileHelper));
+        generator.addProvider(event.includeClient(), new OwlFixSoundDefinitionsProvider(owlFixOutput, owlFixExistingFileHelper));
         generator.addProvider(event.includeServer(), blockTagsProvider);
-        generator.addProvider(event.includeServer(), new MaceBlockItemTagsProvider(MaceBlockOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
+        generator.addProvider(event.includeServer(), new MaceBlockItemTagsProvider(maceBlockOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
     }
 }

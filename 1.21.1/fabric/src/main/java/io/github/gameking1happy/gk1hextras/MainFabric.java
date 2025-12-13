@@ -29,16 +29,16 @@ public class MainFabric implements ModInitializer {
             /*
             Adds wet sponge to the fishing junk loot, with a chance of SpongeChance.
              */
-            if(key.equals(BuiltInLootTables.FISHING_JUNK) && SpongeFishing) {
+            if(key.equals(BuiltInLootTables.FISHING_JUNK) && spongeFishing) {
                 LootPool pool = LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1f))
-                        .when(LootItemRandomChanceCondition.randomChance(SpongeChance))
+                        .when(LootItemRandomChanceCondition.randomChance(spongeChance))
                         .add(LootItem.lootTableItem(Items.WET_SPONGE))
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1f)))
                         .build();
                 tableBuilder.pool(pool);
             }
-            if(key.location().equals(ResourceLocation.parse("minecraft:entities/ender_dragon")) && DragonDropsHead)
+            if(key.location().equals(ResourceLocation.parse("minecraft:entities/ender_dragon")) && dragonDropsHead)
             {
                 LootPool pool = LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1f))

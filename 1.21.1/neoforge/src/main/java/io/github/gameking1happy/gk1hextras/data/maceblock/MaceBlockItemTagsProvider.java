@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
 
-import static io.github.gameking1happy.gk1hcore.data.CoreData.ITKC;
+import static io.github.gameking1happy.gk1hcore.data.CoreData.itkc;
 import static io.github.gameking1happy.gk1hextras.Main.MOD_ID;
 
 /**
@@ -32,6 +32,6 @@ public class MaceBlockItemTagsProvider extends ItemTagsProvider {
     }
     @Override
     protected void addTags(HolderLookup.@NotNull Provider lookupProvider) {
-        tag(ITKC("swordblockingmechanics","can_perform_sword_blocking")).add(Items.MACE);
+        tag(itkc("swordblockingmechanics","can_perform_sword_blocking")).add(Items.MACE);
     }
 }

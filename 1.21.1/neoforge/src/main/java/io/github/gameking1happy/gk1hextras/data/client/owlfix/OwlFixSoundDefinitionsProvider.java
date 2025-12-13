@@ -8,7 +8,7 @@ import net.neoforged.neoforge.common.data.SoundDefinitionsProvider;
 import org.jetbrains.annotations.NotNull;
 import fuzs.enderzoology.init.ModSoundEvents;
 
-import static io.github.gameking1happy.gk1hcore.data.CoreData.fNaP;
+import static io.github.gameking1happy.gk1hcore.data.CoreData.fnap;
 
 /**
  * Owl Fix sound definitions datagen.
@@ -22,26 +22,26 @@ public class OwlFixSoundDefinitionsProvider extends SoundDefinitionsProvider {
         super(output, "enderzoology", existingFileHelper);
     }
     private static @NotNull ResourceLocation fP(@NotNull String path) {
-        return fNaP("enderzoology", path);
+        return fnap("enderzoology", path);
     }
 
     /**
      * Owl hurt Resource Location.
      */
-    public static ResourceLocation OwlHurt = fP("mob/owl/hurt");
+    public static ResourceLocation owlHurt = fP("mob/owl/hurt");
     /**
      * Owl hoot 1 Resource Location.
      */
-    public static ResourceLocation OwlHoot1 = fP("mob/owl/hoot1");
+    public static ResourceLocation owlHoot1 = fP("mob/owl/hoot1");
     /**
      * Owl hoot 2 Resource Location.
      */
-    public static ResourceLocation OwlHoot2 = fP("mob/owl/hoot2");
+    public static ResourceLocation owlHoot2 = fP("mob/owl/hoot2");
     @Override
     public void registerSounds() {
         add(ModSoundEvents.OWL_DEATH_SOUND_EVENT.value(), SoundDefinition.definition()
                 .with(
-                        sound(OwlHurt)
+                        sound(owlHurt)
                                 .volume(0.05f)
                 )
                 .subtitle("subtitles.entity.owl.death")
@@ -49,7 +49,7 @@ public class OwlFixSoundDefinitionsProvider extends SoundDefinitionsProvider {
         );
         add(ModSoundEvents.OWL_HURT_SOUND_EVENT.value(), SoundDefinition.definition()
                 .with(
-                        sound(OwlHurt)
+                        sound(owlHurt)
                                 .volume(0.05f)
                 )
                 .subtitle("subtitles.entity.owl.hurt")
@@ -57,9 +57,9 @@ public class OwlFixSoundDefinitionsProvider extends SoundDefinitionsProvider {
         );
         add(ModSoundEvents.OWL_HOOT_SOUND_EVENT.value(), SoundDefinition.definition()
                 .with(
-                        sound(OwlHoot1)
+                        sound(owlHoot1)
                                 .volume(0.05f),
-                        sound(OwlHoot2)
+                        sound(owlHoot2)
                                 .volume(0.05f)
                 )
                 .subtitle("subtitles.entity.owl.hoot")

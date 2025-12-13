@@ -10,7 +10,7 @@ public class Server {
     /**
      * Server initialization.
      */
-    public static void initserver() {
+    public static void initServer() {
         LOG.info("Server-side.");
     }
 }

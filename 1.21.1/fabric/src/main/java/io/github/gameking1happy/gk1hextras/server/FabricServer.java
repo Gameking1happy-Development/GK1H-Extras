@@ -12,6 +12,6 @@ public class FabricServer implements DedicatedServerModInitializer {
      */
     @Override
     public void onInitializeServer() {
-        Server.initserver();
+        Server.initServer();
     }
 }

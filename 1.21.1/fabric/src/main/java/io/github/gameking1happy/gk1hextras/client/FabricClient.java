@@ -12,6 +12,6 @@ public class FabricClient implements ClientModInitializer {
      */
     @Override
     public void onInitializeClient() {
-        Client.initclient();
+        Client.initClient();
     }
 }

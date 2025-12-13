@@ -29,23 +29,23 @@ public class Main {
     /**
      * The server configuration for the mod.
      */
-    public static ServerConfig serverconfig = ConfigApiJava.registerAndLoadConfig(ServerConfig::new);
+    public static ServerConfig serverConfig = ConfigApiJava.registerAndLoadConfig(ServerConfig::new);
     /**
      * Sponge fishing configuration value.
      */
-    public static boolean SpongeFishing = serverconfig.SpongeFishing.get();
+    public static boolean spongeFishing = serverConfig.spongeFishing.get();
     /**
      * Sponge chance configuration value.
      */
-    public static float SpongeChance = serverconfig.SpongeChance.get();
+    public static float spongeChance = serverConfig.spongeChance.get();
     /**
      * Dragon drops head configuration value.
      */
-    public static boolean DragonDropsHead = serverconfig.DragonDropsHead.get();
+    public static boolean dragonDropsHead = serverConfig.dragonDropsHead.get();
     /**
      * Mace blocking configuration value.
      */
-    public static boolean MaceBlock = serverconfig.MaceBlock.get();
+    public static boolean maceBlock = serverConfig.maceBlock.get();
     /**
      * Common method for initializing the mod.
      */

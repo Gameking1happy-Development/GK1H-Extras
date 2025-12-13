@@ -15,6 +15,6 @@ public class NeoForgeServer {
      * Runs the NeoForge server-side mod initializer.
      */
     public NeoForgeServer() {
-        Server.initserver();
+        Server.initServer();
     }
 }

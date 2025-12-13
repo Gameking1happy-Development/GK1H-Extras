@@ -10,7 +10,7 @@ public class Client {
     /**
      * Client initialization.
      */
-    public static void initclient() {
+    public static void initClient() {
         LOG.info("Client-side.");
     }
 }
