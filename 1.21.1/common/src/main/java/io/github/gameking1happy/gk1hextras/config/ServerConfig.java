@@ -11,13 +11,13 @@ import net.minecraft.network.chat.Component;
 import static io.github.gameking1happy.gk1hcore.compat.CompatFlags.*;
 import static io.github.gameking1happy.gk1hextras.Main.MOD_ID;
 import static io.github.gameking1happy.gk1hcore.data.CoreData.fnap;
-import static me.fzzyhmstrs.fzzy_config.annotations.Action.RELOG;
+import static me.fzzyhmstrs.fzzy_config.annotations.Action.RESTART;
 
 /**
  * The server configuration for the mod.
  */
 @SuppressWarnings("CanBeFinal")
-@RequiresAction(action = RELOG)
+@RequiresAction(action = RESTART)
 public class ServerConfig extends Config {
     /**
      * Sponge fishing configuration value.

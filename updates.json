@@ -2,10 +2,11 @@
   "homepage": "https://github.com/Gameking1happy-Development/GK1H-Extras",
   "1.21.1": {
     "21.1.1.0": "Release.",
-    "21.1.1.1": "Renamed everything to convention."
+    "21.1.1.1": "Renamed everything to convention.",
+    "21.1.1.2": "Patch."
   },
   "promos": {
-    "1.21.1-latest": "21.1.1.1",
-    "1.21.1-recommended": "21.1.1.1"
+    "1.21.1-latest": "21.1.1.2",
+    "1.21.1-recommended": "21.1.1.2"
   }
 }
